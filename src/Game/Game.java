@@ -3,24 +3,31 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import Game.Game;
-import Game.Player;
+
+
 
 public class Game extends Canvas implements Runnable, KeyListener{
 
-    public static int WIDTH = 800, HEIGHT = 600;
+    public static int WIDTH = 480, HEIGHT = 480;
+    public static Image grass;
     public Game game;
     public Player player;
+    public World world;
     
     
     public Game(){
         this.addKeyListener(this);
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        player = new Player(0, 0);
+        new Spritesheet();
+
+        player = new Player(32, 32);
+        world = new World();
     }
 
     // Game loop - logica do jogo
@@ -40,7 +47,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 
         g.setColor(Color.DARK_GRAY);
         g.fillRect(0,0, WIDTH, HEIGHT);
+
         player.render(g);
+        world.render(g);
 
         bs.show();
 
