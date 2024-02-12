@@ -15,7 +15,7 @@ public class World {
 
     public World(){
         // Inicializa os blocos
-        for(int xx = 0; xx < 20; xx++){
+       /*  for(int xx = 0; xx < 20; xx++){
             Blocks.add(new Blocks(xx*32, 0));
             Blocks.add(new Blocks(xx*32, 480-32));
         }
@@ -23,6 +23,7 @@ public class World {
             Wall.add(new Wall(0, yy*32));
             Wall.add(new Wall(640-32, yy*32));
         }
+        */
 
         // Inicializa o piso
         for(int xx = 0; xx < 40; xx++){
