@@ -1,6 +1,6 @@
 package Game;
 import java.awt.Canvas;
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -14,7 +14,8 @@ import Game.Game;
 
 public class Game extends Canvas implements Runnable, KeyListener{
 
-    public static int WIDTH = 480, HEIGHT = 480;
+    public static int WIDTH = 640, HEIGHT = 480;
+    public static int SCALER = 3;
     public static Image grass;
     public Game game;
     public Player player;
@@ -45,11 +46,12 @@ public class Game extends Canvas implements Runnable, KeyListener{
         }
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.DARK_GRAY);
-        g.fillRect(0,0, WIDTH, HEIGHT);
+        //g.setColor(Color.DARK_GRAY);
+       //g.fillRect(0,0, WIDTH, HEIGHT);
 
-        player.render(g);
+        
         world.render(g);
+        player.render(g);
 
         bs.show();
 
