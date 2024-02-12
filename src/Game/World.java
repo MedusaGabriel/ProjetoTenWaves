@@ -25,8 +25,8 @@ public class World {
         }
 
         // Inicializa o piso
-        for(int xx = 0; xx < 20; xx++){
-            for(int yy = 0; yy < 20; yy++){
+        for(int xx = 0; xx < 40; xx++){
+            for(int yy = 0; yy < 30; yy++){
                 Floor.add(new Floor(xx*32, yy*32));
             }
         }

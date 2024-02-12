@@ -14,7 +14,7 @@ import Game.Game;
 
 public class Game extends Canvas implements Runnable, KeyListener{
 
-    public static int WIDTH = 800, HEIGHT = 600;
+    public static int WIDTH = 1280, HEIGHT = 720;
     public static int SCALER = 3;
     public static Image grass;
     public Game game;

@@ -9,7 +9,7 @@ public class Player extends Rectangle{
     public int curAnimation = 0;
     public int curFrames = 0, targetFrames = 7;
     public Player(int x, int y){
-        super(x, y, 32, 32);
+        super(x, y, 90, 90);
     }
     public void tick(){
         if(right && World.isFree(x+spd, y)){
@@ -28,7 +28,7 @@ public class Player extends Rectangle{
         if (curFrames == targetFrames) {
             curFrames = 0;
             curAnimation++;
-            if(curAnimation == Spritesheet.player_front.length){
+            if(curAnimation == Spritesheet.player_idle.length){
                 curAnimation = 0;
             }
             
@@ -36,6 +36,6 @@ public class Player extends Rectangle{
     }
     public void render (Graphics g){
 
-       g.drawImage(Spritesheet.player_front[curAnimation], x, y, 64, 64, null);
+       g.drawImage(Spritesheet.player_idle[curAnimation], x, y, 90, 90, null);
     }
 }
