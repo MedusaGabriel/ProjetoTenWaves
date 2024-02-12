@@ -14,14 +14,14 @@ import Game.Game;
 
 public class Game extends Canvas implements Runnable, KeyListener{
 
-    public static int WIDTH = 640, HEIGHT = 480;
+    public static int WIDTH = 800, HEIGHT = 600;
     public static int SCALER = 3;
     public static Image grass;
     public Game game;
     public Player player;
     public World world;
     
-    
+    //1366x768
     public Game(){
         this.addKeyListener(this);
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));

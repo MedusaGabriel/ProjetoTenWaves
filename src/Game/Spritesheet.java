@@ -25,13 +25,13 @@ public class Spritesheet {
         }
 
         
-        player_front = new BufferedImage[4];
+        player_front = new BufferedImage[3];
 
 
-        player_front[0] = Spritesheet.getSprite(1, 11, 16, 16);
-        player_front[1] = Spritesheet.getSprite(18, 11, 16, 16);
-        player_front[2] = Spritesheet.getSprite(35, 11, 16, 16);
-        player_front[3] = Spritesheet.getSprite(52, 11, 16, 16);
+        player_front[0] = Spritesheet.getSprite(259, 229, 32, 32);
+        player_front[1] = Spritesheet.getSprite(291, 229, 32, 32);
+        player_front[2] = Spritesheet.getSprite(323, 229, 32, 32);
+        //player_front[3] = Spritesheet.getSprite(52, 11, 16, 16);
 
         tileWall = Spritesheet.getSpriteWall(36, 1, 16, 16);
         tileFloor = Spritesheet.getSpriteWall(54, 1, 16, 16);
@@ -40,7 +40,7 @@ public class Spritesheet {
         tileWallLeft = Spritesheet.getSpriteWall(74, 1, 16, 16);
     }
     public static BufferedImage getSprite(int x, int y, int width, int height){
-        return spritesheet.getSubimage(x, y, width, height);
+        return spritesheet.getSubimage(x, y, 31,54);
     }
     public static BufferedImage getSpriteWall(int x, int y, int width, int height){
         return spritesheetwall.getSubimage(x, y, width, height);

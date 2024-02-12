@@ -36,6 +36,6 @@ public class Player extends Rectangle{
     }
     public void render (Graphics g){
 
-       g.drawImage(Spritesheet.player_front[curAnimation], x, y, 32, 32, null);
+       g.drawImage(Spritesheet.player_front[curAnimation], x, y, 64, 64, null);
     }
 }
