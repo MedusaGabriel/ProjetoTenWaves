@@ -9,9 +9,12 @@ public class Spritesheet {
     public static BufferedImage spritesheetwall;
     public static BufferedImage spritesheetfloor;
     public static BufferedImage sprite_player_idle;
+    public static BufferedImage sprite_player_walk;
 
     //Sprites Player Buffered
     public static BufferedImage[] player_idle;
+    public static BufferedImage[] player_walk;
+    
 
 
     //Sprite Floor/Wall(Chão/Parede)
@@ -24,8 +27,11 @@ public class Spritesheet {
     public Spritesheet(){
         try {
             sprite_player_idle = ImageIO.read(getClass().getResource("res/sprite_player_idle.png"));
+            sprite_player_walk = ImageIO.read(getClass().getResource("res/sprite_player_idle.png"));
+
             spritesheetwall = ImageIO.read(getClass().getResource("res/spritesheetwall.png"));
             spritesheetfloor = ImageIO.read(getClass().getResource("res/spritesheetfloor.png"));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,11 +47,24 @@ public class Spritesheet {
         player_idle[6] = sprite_player_idle.getSubimage(299, 19, 32, 32);
         player_idle[7] = sprite_player_idle.getSubimage(347, 19, 32, 32);
 
+        //Sprites Player Walk
+        player_walk = new BufferedImage[8];
+        player_walk[0] = sprite_player_idle.getSubimage(11, 65, 32, 32);
+        player_walk[1] = sprite_player_idle.getSubimage(60, 65, 32, 32);
+        player_walk[2] = sprite_player_idle.getSubimage(108, 65, 32, 32);
+        player_walk[3] = sprite_player_idle.getSubimage(156, 65, 32, 32);
+        player_walk[4] = sprite_player_idle.getSubimage(203, 65, 32, 32);
+        player_walk[5] = sprite_player_idle.getSubimage(250, 65, 32, 32);
+        player_walk[6] = sprite_player_idle.getSubimage(298, 65, 32, 32);
+        player_walk[7] = sprite_player_idle.getSubimage(346, 65, 32, 32);
+
+
+
 
 
         //Sprites Floor
         tileFloor = spritesheetfloor.getSubimage(35, 71, 32, 32);
-        
+     
 
        // tileWall = Spritesheet.getSpriteWall(36, 1, 16, 16);
         //tileWallRight = Spritesheet.getSpriteWall(93, 1, 16, 16);
@@ -61,13 +80,18 @@ public class Spritesheet {
     public static BufferedImage getSpritePlayerIdle(int x, int y, int width, int height){
         return sprite_player_idle.getSubimage(x, y, 30, 30);
     }
-    public static BufferedImage getSpriteFloor(int x, int y, int width, int height){
-        return spritesheetfloor.getSubimage(x, y, 32, 32);
+    public static BufferedImage getSpritePlayerWalk(int x, int y, int width, int height){
+        return sprite_player_idle.getSubimage(x, y, 30, 30);
     }
 
 
 
 
-  
+
+
+    public static BufferedImage getSpriteFloor(int x, int y, int width, int height){
+        return spritesheetfloor.getSubimage(x, y, 32, 32);
+    }
+
     
 }
